@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe Api::V1::UsersController do
-  before(:each) { request.headers['Accept'] = 'application/vnd.marketplace.v1' }
   describe "GET #show" do
     before(:each) do
       @user = FactoryBot.create :user
@@ -12,7 +11,7 @@ describe Api::V1::UsersController do
       user_response = JSON.parse(response.body, symbolize_names: true)
       expect(user_response[:email]).to eql @user.email
     end
-    
+
     it { should respond_with 200 } 
   end
 end

@@ -64,6 +64,8 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 
   config.include Request::JsonHelpers, :type => :controller
+  # config.include Devise::TestHelpers, :type => :controller
+  config.include Devise::Test::ControllerHelpers, type: :controller
 end
 
 Shoulda::Matchers.configure do |config|

@@ -3,7 +3,7 @@ class Api::V1::ProductsController < ApplicationController
   respond_to :json
 
   def index
-    render json: Product.all
+    render json: Product.search(params)
   end
 
   def show
